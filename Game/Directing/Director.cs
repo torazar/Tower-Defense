@@ -22,7 +22,7 @@ namespace Unit04.Game.Directing
     {
         private KeyboardService keyboardService = null;
         private VideoService videoService = null;
-        int score = 0;
+        int score = 500;
 
         /// <summary>
         /// Constructs a new instance of Director using the given KeyboardService and VideoService.
@@ -44,7 +44,7 @@ namespace Unit04.Game.Directing
             Actor banner = cast.GetFirstActor("banner");
             
             
-            banner.SetText("Score = "+ score);
+            banner.SetText("Money = "+ score);
             videoService.OpenWindow();
             while (videoService.IsWindowOpen())
             {
@@ -122,11 +122,11 @@ Point bottom = new Point(0, 600);
                     string check = actor.GetText();
                     if(check.Equals("+")){
                         score += 1;
-                        banner.SetText("Score = "+ score);
+                        banner.SetText("Money = "+ score);
                     }
                     else{
                         score -= 1;
-                        banner.SetText("Score = "+ score);
+                        banner.SetText("Money = "+ score);
                     }
                     Artifact artifact = (Artifact) actor;
                     string message = artifact.GetMessage();

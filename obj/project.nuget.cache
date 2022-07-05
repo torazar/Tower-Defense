@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "EEWiR1JlHepiS1TljkDUc06KV999GulOAezLDm664780UFUQaqr4B427oqCkE9WG0RFW9o6RKBKcYGhOBkHiuA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\tack4\\Downloads\\cse210-04-master\\cse210-04-master\\Unit04\\Unit04.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tack4\\.nuget\\packages\\raylib-cs\\3.7.0.1\\raylib-cs.3.7.0.1.nupkg.sha512",
+    "C:\\Users\\tack4\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

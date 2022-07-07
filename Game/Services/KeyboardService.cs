@@ -1,5 +1,6 @@
 using Raylib_cs;
 using Unit04.Game.Casting;
+using System;
 
 
 namespace Unit04.Game.Services
@@ -69,6 +70,17 @@ namespace Unit04.Game.Services
             direction = direction.Scale(cellSize);
 
             return direction;
+        }
+        public bool buy(){
+            
+if (Raylib.IsKeyDown(KeyboardKey.KEY_SPACE))
+            {
+                
+                return true;
+            }
+else{ 
+    
+    return false;}
         }
     }
 }

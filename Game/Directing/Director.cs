@@ -126,7 +126,7 @@ Random random = new Random();
             int maxY = videoService.GetHeight();
             robot.MoveNext(maxX, maxY);
 Point bottom = new Point(0, 600);
-
+Point top = new Point(0, 0);
 List<Actor> artifacts = cast.GetActors("Attack");
             List<Tower> Towers = cast.GetTowers("Defense");
 List<Bullet> Bullets = cast.GetBullets("Response");
@@ -149,11 +149,39 @@ List<Bullet> Bullets = cast.GetBullets("Response");
                         banner.SetText("Money = "+ score);
                         cast.RemoveActor("Attack", actor);
                     
-                    Artifact artifact = (Artifact) actor;
+                    
                     
                    
                 }
+                
+
+                foreach(Bullet bullet in Bullets){
+                     Point Rise = bullet.GetPosition();
+                if(Rise.Equals(top)){
+                    cast.RemoveBullet("Response", bullet);
+                    Console.WriteLine("huh");
+
+                }
+                    
+                    bullet.Fall();
+                    
+                    
+                if(bullet.GetPosition().Equals(actor.GetPosition())){
+                    score += 20;
+                    banner.SetText("Money = "+ score);
+                    cast.RemoveActor("Attack", actor);
+                    
+                    
+                }
+                
+                }
                 foreach (Tower tower in Towers){
+                    if((actor.GetPosition()).Equals(tower.GetPosition())){
+                    score += 20;
+                    banner.SetText("Money = "+ score);
+                    cast.RemoveActor("Attack", actor);
+                    Console.WriteLine("Got em!");
+                }
     bool fire = tower.shoot();
     if (fire==true){ 
         string ztext = ((char)random.Next(43, 44)).ToString();
@@ -178,28 +206,7 @@ List<Bullet> Bullets = cast.GetBullets("Response");
 
     }
                 
-                if(tower.GetPosition().Equals(actor.GetPosition())){
-                    score += 20;
-                    banner.SetText("Money = "+ score);
-                    cast.RemoveActor("Attack", actor);
-                }
                 
-                }
-
-                foreach(Bullet bullet in Bullets){
-                    if(bullet.GetPosition().Equals(actor.GetPosition())){
-                    score += 20;
-                    banner.SetText("Money = "+ score);
-                    cast.RemoveActor("Attack", actor);
-                    cast.RemoveBullet("Response", bullet);
-                }
-                    bullet.Fall();
-                if(bullet.GetPosition().Equals(actor.GetPosition())){
-                    score += 20;
-                    banner.SetText("Money = "+ score);
-                    cast.RemoveActor("Attack", actor);
-                    cast.RemoveBullet("Response", bullet);
-                }
                 
                 }
                 

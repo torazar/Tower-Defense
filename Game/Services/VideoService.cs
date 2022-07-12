@@ -84,13 +84,13 @@ namespace Unit04.Game.Services
             Raylib.DrawText(text, x, y, fontSize, color);
         }
 
-        public void DrawBullet(Bullet tower)
+        public void DrawBullet(Bullet bullet)
         {
-            string text = tower.GetText();
-            int x = tower.GetPosition().GetX();
-            int y = tower.GetPosition().GetY();
-            int fontSize = tower.GetFontSize();
-            Casting.Color c = tower.GetColor();
+            string text = bullet.GetText();
+            int x = bullet.GetPosition().GetX();
+            int y = bullet.GetPosition().GetY();
+            int fontSize = bullet.GetFontSize();
+            Casting.Color c = bullet.GetColor();
             Raylib_cs.Color color = ToRaylibColor(c);
             Raylib.DrawText(text, x, y, fontSize, color);
         }

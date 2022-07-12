@@ -157,6 +157,13 @@ namespace Unit04.Game.Casting
             }
             this.velocity = velocity;
         }
+        public virtual void Fall(){
+            Point Fall = GetPosition();
+                Point Speed = new Point(0, 5);
+                Fall = Fall.Add(Speed);
+                SetPosition(Fall);
+                 
+        }
 
     }
 }

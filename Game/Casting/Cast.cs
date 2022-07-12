@@ -14,6 +14,7 @@ namespace Unit04.Game.Casting
     {
         private Dictionary<string, List<Actor>> actors = new Dictionary<string, List<Actor>>();
         private Dictionary<string, List<Tower>> Towers = new Dictionary<string, List<Tower>>();
+         private Dictionary<string, List<Bullet>> Bullets = new Dictionary<string, List<Bullet>>();
 
         /// <summary>
         /// Constructs a new instance of Cast.
@@ -51,6 +52,18 @@ namespace Unit04.Game.Casting
                 Towers[group].Add(tower);
             }
         }
+        public void AddBullet(string group, Bullet bullet)
+        {
+            if (!Bullets.ContainsKey(group))
+            {
+                Bullets[group] = new List<Bullet>();
+            }
+
+            if (!Bullets[group].Contains(bullet))
+            {
+                Bullets[group].Add(bullet);
+            }
+        }
 
         /// <summary>
         /// Gets the actors in the given group. Returns an empty list if there aren't any.
@@ -66,6 +79,16 @@ namespace Unit04.Game.Casting
             }
             return results;
         }
+
+        public List<Bullet> GetBullets(string group)
+        {
+            List<Bullet> results = new List<Bullet>();
+            if (Bullets.ContainsKey(group))
+            {
+                results.AddRange(Bullets[group]);
+            }
+            return results;}
+
         public List<Tower> GetTowers(string group)
         {
             List<Tower> resultz = new List<Tower>();
@@ -99,6 +122,15 @@ namespace Unit04.Game.Casting
             return resultz;
         }
 
+            public List<Bullet> GetAllBullets()
+        {
+            List<Bullet> results = new List<Bullet>();
+            foreach (List<Bullet> result in Bullets.Values)
+            {
+                results.AddRange(result);
+            }
+            return results;
+        }
 
         /// <summary>
         /// Gets the first actor in the given group.
@@ -128,6 +160,15 @@ namespace Unit04.Game.Casting
             if (actors.ContainsKey(group))
             {
                 actors[group].Remove(actor);
+            }
+        }
+
+
+        public void RemoveBullet(string group, Bullet actor)
+        {
+            if (Bullets.ContainsKey(group))
+            {
+                Bullets[group].Remove(actor);
             }
         }
 

@@ -84,6 +84,17 @@ namespace Unit04.Game.Services
             Raylib.DrawText(text, x, y, fontSize, color);
         }
 
+        public void DrawBullet(Bullet tower)
+        {
+            string text = tower.GetText();
+            int x = tower.GetPosition().GetX();
+            int y = tower.GetPosition().GetY();
+            int fontSize = tower.GetFontSize();
+            Casting.Color c = tower.GetColor();
+            Raylib_cs.Color color = ToRaylibColor(c);
+            Raylib.DrawText(text, x, y, fontSize, color);
+        }
+
         /// <summary>
         /// Draws the given list of actors on the screen.
         /// </summary>
@@ -100,6 +111,13 @@ namespace Unit04.Game.Services
             foreach (Tower actor in actors)
             {
                 DrawTower(actor);
+            }
+        }
+        public void DrawBullets(List<Bullet> actors)
+        {
+            foreach (Bullet actor in actors)
+            {
+                DrawBullet(actor);
             }
         }
         

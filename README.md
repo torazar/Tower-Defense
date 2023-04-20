@@ -1,7 +1,5 @@
-# Robot Finds Kitten
-Simon Carless once described robotfindskitten as "less a game and more a way of 
-life ... It's fun to wander around until you find a kitten, at which point you feel 
-happy and can start again". I don't think I could have said it better myself!
+# Basic Tower Defense
+A very simple Tower Defense game, designed as an exploration into the understanding of the Tower Defense Genre. You move around, place towers, and try to keep the rain from hitting the ground!
 
 ---
 ## Getting Started
@@ -32,6 +30,6 @@ root                    (project root folder)
 * dotnet 6.0
 * raylib-cs 3.7.0.1
 
-## Authors
-* Matt Manley (manleym@byui.edu)
-* Scott Burton (burtons@byui.edu)
+## Author
+
+* Tyler Zweifel editor
